@@ -1,20 +1,31 @@
-Tecnologías Requeridas
 
-- Python como lenguaje principal
+#  Curso Automation Testing de Talento Tech 2025 
 
-- Pytest para estructura de testing
+Pre entrega de proyecto final
 
-- Selenium WebDriver para automatización
 
-- Git y GitHub para control de versiones
+## Tecnologías Requeridas
 
-Instrucciones instalacion dependencias 
-- pip install pytest pytest-html
-- pip install selenium
-- pip install webdriver-manager 
- 
-- comandos para ejecutar el reporte html  
-pytest -v --html=reports/reporte.html 
+    Python como lenguaje principal
+
+    Pytest para estructura de testing
+
+    Selenium WebDriver para automatización
+
+    Git y GitHub para control de versiones
+
+## Instrucciones para instalacion de dependencias
+    
+    pip install pytest pytest-html
+
+    pip install selenium
+
+    pip install webdriver-manager
+
+## Comandos para ejecutar el reporte html
+pytest -v --html=reports/reporte.html
+
+
 
 **pendiente 
 - Evidencias: se incluyem evidencias de ejecuciones de los tests en carpeta
