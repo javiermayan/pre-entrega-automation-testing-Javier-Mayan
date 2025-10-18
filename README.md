@@ -16,4 +16,6 @@ Instrucciones instalacion dependencias
 - comandos para ejecutar el reporte html  
 pytest -v --html=reports/reporte.html 
 
-- evidencias 
+**pendiente 
+- Evidencias: se incluyem evidencias de ejecuciones de los tests en carpeta
+- listar otras opciones incluidas en el framework 
