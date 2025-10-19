@@ -30,19 +30,26 @@ def test_login(driver):
 	# click al botón de login
     # validamos que accedimos al inventario con el método current_url del driver 
     assert "/inventory.html" in driver.current_url
+    # verificar elementos importantes de la página 
     # validamos el título de la página del inventario 
     # lo capturamos por su class name usando la clase del span y del div que lo contiene 
     titulo  = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
     assert titulo == 'Products'
 
 def test_catalogo():
-	# verificar título del html 
-	# comprobar si existen productos verificando la clase del contenedor de productos con la función len() si es > 0 tiene productos 
-	# verificar elementos importantes de la página 
-    print('borrar')
+	# iniciar login 
+    login_saucedemo(driver)
+    # buscamos la presencia de la clase inventory_item para asegurar que hay productos
+    # usamos find_elements para buscar dentro de una lista de elementos similares
+    products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+    # validamos, si products es mayor que cero, existen item listados 
+    assert len(products) > 0	  
 
-def test_carrito():
-	# loguearme 
+# test para validar el acceso al carrito de compras 
+# le pasamos el driver para inciar otra sesión 
+def test_carrito(driver):
+	
+
 	# ir al carrito de compras 
 	# verificar que carrito se incremente clase del elemento span 
 	# verificar que en el carrito aparezca el producto 
