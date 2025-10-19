@@ -36,7 +36,7 @@ def test_login(driver):
     titulo  = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
     assert titulo == 'Products'
 
-def test_catalogo():
+def test_catalogo(driver):
 	# iniciar login 
     login_saucedemo(driver)
     # buscamos la presencia de la clase inventory_item para asegurar que hay productos
@@ -48,9 +48,15 @@ def test_catalogo():
 # test para validar el acceso al carrito de compras 
 # le pasamos el driver para inciar otra sesión 
 def test_carrito(driver):
-	
-
+    # repetimos los pasos del test de catálogo 
+    login_saucedemo(driver)
+    products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
+    assert len(products) > 0	
+    # agregamos un producto al carrito 
+    # buscamos el primer elemento de la lista de productos y le hacemos click 
+    products[0].find_element(By.TAG_NAME, 'button').click()
 	# ir al carrito de compras 
 	# verificar que carrito se incremente clase del elemento span 
 	# verificar que en el carrito aparezca el producto 
-    print('borrar')
+    badge = driver.find_element(By.CLASS_NAME, 'shopping_cart_badge').text
+    assert badge == "1"  
