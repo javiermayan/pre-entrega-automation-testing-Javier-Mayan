@@ -1,7 +1,10 @@
 import pytest 
+# importamos By para capturar los elementos 
+from selenium.webdriver.common.by import By
 import sys
 import os
-# esto nos permite obtener la ruta del archivo actual 
+# esto nos permite obtener la ruta del archivo actual con esta estructura de carpetas
+# convierte la ruta relativa en absoluta 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 # importamos las funciones para llamar al driver y acceder al login 
 from utils.helpers import get_driver, login_saucedemo
@@ -25,6 +28,12 @@ def test_login(driver):
     login_saucedemo(driver)
 	# assert para el valor del input para validar credenciales 
 	# click al botón de login
+    # validamos que accedimos al inventario con el método current_url del driver 
+    assert "/inventory.html" in driver.current_url
+    # validamos el título de la página del inventario 
+    # lo capturamos por su class name usando la clase del span y del div que lo contiene 
+    titulo  = driver.find_element(By.CSS_SELECTOR, 'div.header_secondary_container .title').text
+    assert titulo == 'Products'
 
 def test_catalogo():
 	# verificar título del html 
