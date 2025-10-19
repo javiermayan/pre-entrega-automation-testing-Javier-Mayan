@@ -1,4 +1,6 @@
 import pytest 
+# importamos las funciones para llamar al driver y acceder al login 
+from utils.helpers import login_saucedemo, get_driver
 
 @pytest.fixture 
 def driver():
