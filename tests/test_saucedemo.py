@@ -5,6 +5,12 @@ from utils.helpers import login_saucedemo, get_driver
 @pytest.fixture 
 def driver():
 	# configuracion para consultar a Selenium webdriver 
+    # llamamos a la función get_driver() y la almacenamos en una variable 
+    driver = get_driver()
+    # le entrega al navegador el driver 
+    yield driver
+    # finalida la sesión del driver lo cerramos 
+    driver.quit()
 	
 def test_login():
 	# assert para el valor del input para validar credenciales 
