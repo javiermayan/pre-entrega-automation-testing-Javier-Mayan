@@ -23,10 +23,13 @@ Pre entrega de proyecto final
     pip install webdriver-manager
 
 ## Comandos para ejecutar el reporte html
-pytest -v --html=reports/reporte.html
 
+    pytest -v
 
+## Comandos para ejecutar el reporte html
+    
+    pytest --html=reports/report.html --self-contained-html
 
-**pendiente 
-- Evidencias: se incluyem evidencias de ejecuciones de los tests en carpeta
-- listar otras opciones incluidas en el framework 
+## Evidencias
+
+    Se incluye screenshot como evidencia gráfica de la ejecución del test

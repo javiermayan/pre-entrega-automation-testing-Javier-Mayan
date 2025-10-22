@@ -52,6 +52,8 @@ def test_carrito(driver):
     login_saucedemo(driver)
     products = driver.find_elements(By.CLASS_NAME, 'inventory_item')
     assert len(products) > 0	
+    # hacemos una captura de imagen como evidencia 
+    driver.save_screenshot('inventario.png')
     # agregamos un producto al carrito 
     # buscamos el primer elemento de la lista de productos y le hacemos click 
     products[0].find_element(By.TAG_NAME, 'button').click()
